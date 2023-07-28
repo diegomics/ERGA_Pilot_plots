@@ -6,7 +6,7 @@ library(viridis)
 library(RColorBrewer)
 
 
-data <- read_excel("pilot_qc_tab.xlsx")
+data <- read_excel("/Users/home/Downloads/Supplementary_Table.xlsx")
 
 
 
@@ -92,17 +92,18 @@ new_data <- new_data %>%
 
 ggplot(new_data) +
   geom_segment(aes(x = ToLID, xend = ToLID, y = BUSCOc_ancient, yend = BUSCOc_euka), color = "grey") +
-  geom_point(aes(x = ToLID, y = BUSCOc_ancient, color = "LCA"), size = 3) +
-  geom_point(aes(x = ToLID, y = BUSCOc_euka, color = "Eukaryota"), size = 3) +
+  geom_point(aes(x = ToLID, y = BUSCOc_euka), color = "#2e3436", size = 3) +
+  geom_point(aes(x = ToLID, y = BUSCOc_ancient, color = Taxa_1), size = 3) +
   coord_flip() +
   theme(panel.background = element_rect(fill = "white")) +
   theme(panel.grid.major.x = element_line(color = "grey", linewidth = 0.1, linetype = "dashed")) +
   theme(panel.grid.major.y = element_line(color = "grey", linewidth = 0.2, linetype = "dotted")) +
-  scale_color_manual(values = c("#525252", "#4393C3")) +
+  scale_color_manual(values = c("Viridiplantae" = "#4e9a06", "Vertebrata" = "#3465a4", "Phaeophyceae" = "#f57900", "Nematomorpha" = "#c17d11", "Porifera" = "#c17d11", "Insecta" = "#cc0000", "Fungi" = "#edd400")) +
   labs(x = "Assembly", y = "BUSCO complete") +
   theme(axis.text.x = element_text(size=14), axis.title = element_text(size = 15)) +
   theme(axis.text.y = element_text(size=12), axis.title = element_text(size = 15)) +
   theme(legend.position = "none")
+
   
 
 
