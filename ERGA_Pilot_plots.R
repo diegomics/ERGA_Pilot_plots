@@ -6,7 +6,7 @@ library(viridis)
 library(RColorBrewer)
 
 
-data <- read_excel("/Users/home/Downloads/Supplementary_Table.xlsx")
+data <- read_excel("Supplementary_Table.xlsx")
 
 
 
